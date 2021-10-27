@@ -21,11 +21,12 @@ header{
 a:visited{
     color: #0000FF;
 }
+
 .card{
-    width: 450px;
+    flex-basis: 450px;
 }
 
-.card header{
+.card > header{
     background: #288088;
     border: solid 2px #45ADAD;
     padding-top: 20px;
@@ -36,9 +37,10 @@ a:visited{
 
 .pricing{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #image1, #image2, #image3, #image4, #image5{
@@ -77,13 +79,19 @@ a:visited{
 @media only screen and (min-width: 850px){
 
     header {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center; 
+        right: 0;
+        left: 0;
         /* position: fixed;
         width: 100%; */
         
+    }
+
+    body > header{
+        position: sticky;
+        top:0px;
     }
 
     .nav_links{
@@ -95,7 +103,6 @@ a:visited{
 
     .card{
         flex-basis: 250px;
-        flex-direction: row;
     }
 
     .pricing{
@@ -111,30 +118,48 @@ a:visited{
         
 }
 
-@media print{
+@media print {
     body{
         background-image: none;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        width:100%;
     }
 
     .nav_links{
         display: flex;
         flex-direction: row;
-        justify-content: space-between; 
-        align-content: space-between;
-    }
-
-    .pricing{
-        
-
+        align-items: center;
+        justify-content: space-evenly; 
+        width: 100%;
     }
 
     .card{
         border: solid 2px #45ADDD;
         flex-basis: 250px;
+    }
 
+    .pricing{
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    #gallery{
+        display: none;
     }
     
     .gallery{
-        visibility: hidden;
+        display: none;
     }
+
+    .card > ul li::before{
+        content: '👍';
+    }
+
 }
