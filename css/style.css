@@ -1,0 +1,140 @@
+body{
+  font-family: "Alegreya Sans SC", serif; 
+  background-image: url(../images/concrete_seamless.png);
+  background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_links{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a:visited{
+    color: #0000FF;
+}
+.card{
+    width: 450px;
+}
+
+.card header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#image1, #image2, #image3, #image4, #image5{
+    display: flex;
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#logo{
+    animation-name: animation; 
+    animation-duration: 5s;
+}
+
+@keyframes animation {
+    from{
+        width: 50px;
+        opacity: 0;
+    }
+
+    to{
+        width: 450px;
+        opacity: 1;
+    }
+
+}
+
+@media only screen and (min-width: 850px){
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; 
+        /* position: fixed;
+        width: 100%; */
+        
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .card{
+        flex-basis: 250px;
+        flex-direction: row;
+    }
+
+    .pricing{
+        flex-direction: row;
+    }
+    
+}
+
+@media only screen and (preferd-reduced-motion:reduce){
+    #logo{
+        animation: none;
+    }
+        
+}
+
+@media print{
+    body{
+        background-image: none;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        align-content: space-between;
+    }
+
+    .pricing{
+        
+
+    }
+
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 250px;
+
+    }
+    
+    .gallery{
+        visibility: hidden;
+    }
+}
